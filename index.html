@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetris</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">TETRIS</h1>
+      <p class="subtitle">Clear lines. Climb levels. Don't top out.</p>
+    </header>
+
+    <main class="game">
+      <aside class="panel left">
+        <div class="card">
+          <h2>Hold</h2>
+          <canvas id="hold" width="120" height="120"></canvas>
+          <p class="hint">Press <kbd>C</kbd></p>
+        </div>
+        <div class="card stats">
+          <div class="stat">
+            <span class="stat-label">Score</span>
+            <span class="stat-value" id="score">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Lines</span>
+            <span class="stat-value" id="lines">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Level</span>
+            <span class="stat-value" id="level">1</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Best</span>
+            <span class="stat-value" id="best">0</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="board-wrap">
+        <canvas id="board" width="300" height="600"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-inner">
+            <h2 id="overlay-title">Ready?</h2>
+            <p id="overlay-text">Press <kbd>Space</kbd> or tap Start</p>
+            <button id="start-btn" class="btn primary">Start</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel right">
+        <div class="card">
+          <h2>Next</h2>
+          <canvas id="next" width="120" height="120"></canvas>
+        </div>
+        <div class="card controls">
+          <h2>Controls</h2>
+          <ul>
+            <li><kbd>←</kbd> <kbd>→</kbd> Move</li>
+            <li><kbd>↓</kbd> Soft drop</li>
+            <li><kbd>Space</kbd> Hard drop</li>
+            <li><kbd>↑</kbd> / <kbd>X</kbd> Rotate CW</li>
+            <li><kbd>Z</kbd> Rotate CCW</li>
+            <li><kbd>C</kbd> Hold</li>
+            <li><kbd>P</kbd> Pause</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <div class="mobile-controls" aria-hidden="true">
+      <button data-action="left" class="mbtn">◀</button>
+      <button data-action="rotate" class="mbtn">⟳</button>
+      <button data-action="right" class="mbtn">▶</button>
+      <button data-action="down" class="mbtn">▼</button>
+      <button data-action="drop" class="mbtn wide">DROP</button>
+      <button data-action="hold" class="mbtn">HOLD</button>
+    </div>
+
+    <footer class="footer">
+      <span>Built with vanilla JS · <a href="https://github.com/avim1919/Test21-04" target="_blank" rel="noopener">source</a></span>
+    </footer>
+  </div>
+
+  <script src="tetris.js"></script>
+</body>
+</html>
